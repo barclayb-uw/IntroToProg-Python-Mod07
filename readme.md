@@ -59,8 +59,12 @@ I once again went to Google for my initial foray into information on exceptions.
 Exceptions occur when the Python code runs as it is intended to, but the code cannot process the result.   This is different from a syntax error like a missing parentheses because that will stop the code from running altogether, an exception may break the code, but only after it runs.  Exceptions will generally occur when you are bringing in data from an external source, like a file or asking a user to enter something.   Some common exceptions may be the file you are calling is not present or the case is incorrect, the user entered unexpected data like string characters instead of a number  or a resulting calculation tries to divide by zero.   When these exceptions occur they will throw an ugly although somewhat readable message on the screen.  This is ok, but not what the programmer intended so when creating code we need to make sure to try and capture any exceptions and handle them gracefully. 
 
 Like I mentioned above there are several common exceptions.   In Python you can test for these exceptions by using a try statement in your code, this allows you to try the code and if an exception occurs you can tell the code to respond in a certain way.  This keeps the script running and may also let the user know what caused the issue.   To catch an exception you can use the combination of try and except .  Figure 2 is from the Real Python page that shows using try and except together.
-
-
+```
+try:
+    linux_interaction()
+except:
+    pass
+```
 ###### Figure 2 [https://realpython.com/python-exceptions/] simply try and except statement..  
 
 This is great and will keep your code from throwing an ugly error, but since there are several different types of exceptions it is important to specify how you want your code to handle each one.  I decided to create a simple script that shows two common exception scenarios  and how to handle them.   In this code I will create a request for input of two numbers and divide those numbers for a result.   I will create exceptions if the users enter text instead of a number and another in case they try to divide by 0.    See Figure 3 below for my code.
